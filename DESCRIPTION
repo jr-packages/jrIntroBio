@@ -15,7 +15,7 @@ LazyData: true
 Imports:
     jrIntroduction, ggplot2movies, dplyr (>= 0.7.0), readr, readxl, jrData
 Remotes:
-    jr-packages/jrData
+    jr-packages/jrData, jr-packages/jrIntroduction
 Suggests:
     knitr, tufte, rmarkdown, formatR
 VignetteBuilder: knitr
