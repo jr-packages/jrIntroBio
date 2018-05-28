@@ -31,7 +31,7 @@ fig <- local({
 
 # Data manipulation 
 
-This section will hopefully help you get more comfortable with some of the `dplyr` functionality for "wrangling" your data. We will do some data wrangling and the use that to create some plots. Make sure you load in the `dplyr` package and the `yeast` data set.
+This section will hopefully help you get more comfortable with some of the `dplyr` functionality for "wrangling" your data. We will do some data wrangling and the use that to summarise the data. Make sure you load in the `dplyr` package and the `yeast` data set.
 
 ```{r, echo = 2:3, eval = 2:3}
 suppressPackageStartupMessages(library(dplyr))
