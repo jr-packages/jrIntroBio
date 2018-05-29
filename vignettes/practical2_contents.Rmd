@@ -38,7 +38,7 @@ This is just a suggestion to try and help get you into "good habits" early. If I
 
 # Data frames 
 
-For this set of questions we will use a dataset from a 1996 paper on yeast protein localisations within the cell[^1]. Eachs row is a protein locus. For each locus the data contains the various features of the amino acid sequence to identify the subcellular locations and then finally the experimentally observed subcellular localisation.
+For this set of questions we will use a dataset from a 1996 paper on yeast protein localisations within the cell[^1]. Each row is a protein locus. For each locus the data contains the various features of the amino acid sequence to identify the subcellular locations and then finally the experimentally observed subcellular localisation.
 
 To load the data into your current session you can use.
 
@@ -60,7 +60,7 @@ data(yeast, package = "jrIntroBio")
     dim(yeast)
     ```
 
-(1) Recall that if I want to pull out a single column, or variable, from a data frame we can use `$`. To extract the protein id's from this data set we write `yeast$seq`.^[If you can't remember what the names of the columns are, you can use `colnames(yeast)` to find out. Since this dataset is part of a package, you coulld also type `?yeast` to get some documentation on the dataset] 
+(1) Recall that if I want to pull out a single column, or variable, from a data frame we can use `$`. To extract the protein id's from this data set we write `yeast$seq`.^[If you can't remember what the names of the columns are, you can use `colnames(yeast)` to find out. Since this dataset is part of a package, you could also type `?yeast` to get some documentation on the dataset] 
 
 Using `mean()` and `median()` calculate these summary statistics for the measure on nucleus concensus patterns `nuc`.
 
