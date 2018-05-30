@@ -51,7 +51,7 @@ yeast %>%
   summarise(mean = mean(mit))
 ```
 
-(1) Now adapt this code to use the `group_by` function to produce a mean for each localisation class. Remember you can simply add another line into the pipeline.
+(2) Now adapt this code to use the `group_by` function to produce a mean for each localisation class. Remember you can simply add another line into the pipeline.
  
 ```{r, eval=FALSE}
 yeast %>%
@@ -59,7 +59,7 @@ yeast %>%
   summarise(mean = mean(mit))
 ```
 
-(1) Now create a another additional summaries by adding to your summarise function. Calculate the sample size and standard deviation of the `mit` measure as well as its mean. See the
+(3) Now create a another additional summaries by adding to your summarise function. Calculate the sample size and standard deviation of the `mit` measure as well as its mean. See the
 examples in `?summarise` if you get stuck.
 
 ```{r, eval=FALSE}
@@ -70,7 +70,7 @@ yeast %>%
             sd = sd(mit))
 ```
 
-(1) Bonus Question: We want to calculate the mean for all of the amino acid measures across all of the localisations. You can use the `summarise_all()` function for this but you will need to remove a collumn first...
+(4) Bonus Question: We want to calculate the mean for all of the amino acid measures across all of the localisations. You can use the `summarise_all()` function for this but you will need to remove a collumn first...
 
 ```{r, eval=FALSE}
 yeast %>%

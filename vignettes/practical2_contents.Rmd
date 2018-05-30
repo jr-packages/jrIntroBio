@@ -77,19 +77,19 @@ median(yeast$nuc)
 min(yeast$vac)
 ```
 
-(1) What is the maximum value for the result of discriminant analysis on the amino acid content of the 20-residue N-terminal region of mitochondrial and non-mitochondrial proteins `mit`?
+(2) What is the maximum value for the result of discriminant analysis on the amino acid content of the 20-residue N-terminal region of mitochondrial and non-mitochondrial proteins `mit`?
 
 ```{r}
 max(yeast$mit)
 ```
 
-(1) What is the standard deviation for vacuolar and extracellular measure `vac`?
+(3) What is the standard deviation for vacuolar and extracellular measure `vac`?
 
 ```{r}
 sd(yeast$vac)
 ```
 
-(1) How many proteins of each class are in the dataset?
+(4) How many proteins of each class are in the dataset?
 
 ```{r}
 table(yeast$class)
@@ -99,6 +99,6 @@ table(yeast$class)
 
 Solutions to the practical questions are contained within the package
 
-```{r, eval= FALSE, echo = TRUE}
-vignette("solutions2", package = "jrIntroduction")
+```{r, eval= FALSE}
+vignette("solutions2", package = "jrIntroBio")
 ```
