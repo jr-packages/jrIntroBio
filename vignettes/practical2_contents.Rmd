@@ -13,17 +13,17 @@ opts_chunk$set(fig.path='figure/graphics-',
 knit_hooks$set(crop=hook_pdfcrop)
 suppressPackageStartupMessages(library(dplyr))
 fig <- local({
-    i <- 0
-    ref <- list()
-    list(
-        cap=function(refName, text) {
-            i <<- i + 1
-            ref[[refName]] <<- paste0("Figure ",i)
-            paste("Figure ", i, ": ", text, sep="")
-        },
-        ref=function(refName) {
-            ref[[refName]]
-        })
+  i <- 0
+  ref <- list()
+  list(
+    cap=function(refName, text) {
+      i <<- i + 1
+      ref[[refName]] <<- paste0("Figure ",i)
+      paste("Figure ", i, ": ", text, sep="")
+    },
+    ref=function(refName) {
+      ref[[refName]]
+    })
 })
 
 # usage 
@@ -50,48 +50,54 @@ data(yeast, package = "jrIntroBio")
 
 (1)  Use the `head()` function to inspect the top of the data, this can help give you a feel for what the data looks like and what variables are contained within the data?
 
-    ```{r}
-    head(yeast)
-    ```
+```{r}
+head(yeast)
+```
 
 (1) How many proteins and how many variables are in this data set?
-    
-    ```{r}
-    dim(yeast)
-    ```
+
+```{r}
+dim(yeast)
+```
+
+```{r}
+dim(yeast)
+```
 
 (1) Recall that if I want to pull out a single column, or variable, from a data frame we can use `$`. To extract the protein id's from this data set we write `yeast$seq`.^[If you can't remember what the names of the columns are, you can use `colnames(yeast)` to find out. Since this dataset is part of a package, you could also type `?yeast` to get some documentation on the dataset] 
 
 Using `mean()` and `median()` calculate these summary statistics for the measure on nucleus concensus patterns `nuc`.
 
-    ```{r}
-    mean(yeast$nuc)
-    median(yeast$nuc)
-    ```
+```{r}
+mean(yeast$nuc)
+median(yeast$nuc)
+```
 
-(1) What is the lowest value for discriminant analysis on the amino acid content of vacuolar and extracellular proteins `vac` in the data.
+(1) What is the lowest value for discriminant analysis[^2] on the amino acid content of vacuolar and extracellular proteins `vac` in the data.
 
-    ```{r}
-    min(yeast$vac)
-    ```
+[^2]: Discriminant analysis in this context is a comparison of the amino acid composition of an unknown protein in question to the amino acid composition of proteins of a known localisation. It doesn't matter exactly how this measure was derived for now, just know that a higher value means a higher degree of similarity in amino acid composition to the known proteins of that class.
 
-(1) What is the maximum value for the result of descriminant analysis on the amino acid content of the 20-residue N-terminal region of mitochondrial and non-mitochondrial proteins `mit`?
+```{r}
+min(yeast$vac)
+```
 
-    ```{r}
-    max(yeast$mit)
-    ```
+(1) What is the maximum value for the result of discriminant analysis on the amino acid content of the 20-residue N-terminal region of mitochondrial and non-mitochondrial proteins `mit`?
+
+```{r}
+max(yeast$mit)
+```
 
 (1) What is the standard deviation for vacuolar and extracellular measure `vac`?
 
-    ```{r}
-    sd(yeast$vac)
-    ```
-    
+```{r}
+sd(yeast$vac)
+```
+
 (1) How many proteins of each class are in the dataset?
 
-    ```{r}
-    table(yeast$class)
-    ```
+```{r}
+table(yeast$class)
+```
 
 # Solutions
 
@@ -100,23 +106,3 @@ Solutions to the practical questions are contained within the package
 ```{r, eval= FALSE, echo = TRUE}
 vignette("solutions2", package = "jrIntroduction")
 ```
-
-
-
-
-<!-- (1) You can use `table()` on more than one column at once by just adding extra columns as arguments. For example `table(movies$mpaa, movies$Action)` would tell me how many action and non action films there are for each of the mpaa ratings. How many romantic comedy films are there? i.e a 1 in the Romance column and a 1 in the Comedy column? -->
-
-<!--     ```{r} -->
-<!--     table(movies$Romance, movies$Comedy) -->
-<!--     ``` -->
-
-<!-- (1) When the values are similar in each variable in the table, it can be difficult to tell which dimension (rows or columns) corresponds to which variable. To aid this there is an argument to the `table()` function, `dnn` which allows us to provide a vector of names. Try  -->
-
-<!--     ```{r, echo=TRUE} -->
-<!--     table(movies$Romance, movies$Comedy, dnn = c("Romance","Comedy")) -->
-<!--     ``` -->
-<!-- (1) How many people cast their vote on a film on average? -->
-
-<!--     ```{r} -->
-<!--     mean(movies$votes) -->
-<!--     ``` -->

@@ -124,7 +124,7 @@ yeast_classes["NUC"]
 sum(yeast_classes)
 ```
 
-(1) What was the most common localisation in the dataset?
+(1) What was the most common localisation in the dataset? __Note:__ You should use R and its functions to find this without having to look through the numbers.
 
 ```{r}
 sort(yeast_classes, decreasing = TRUE)[1]

@@ -1,8 +1,10 @@
-#' Yeast protein localisations.
+#' @title Yeast protein localisations.
 #'
-#' A dataset containing the subcellular protein localisations along with
+#' @description A dataset containing the subcellular protein localisations along with
 #' several amino acid sequence based metrics used to make a classification
-#' of the localisation.
+#' of the localisation. `yeast` contains the full dataset while `yeast_classes` is
+#' simply `class` collumn from the `yeast` dataset as a vector, for convenience
+#' in the practical excercise.
 #'
 #' @format A data frame with 1484 rows and 10 variables:
 #' \describe{
