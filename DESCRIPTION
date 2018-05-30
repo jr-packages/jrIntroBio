@@ -13,9 +13,9 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports:
-    jrIntroduction, ggplot2movies, dplyr (>= 0.7.0), readr, readxl, jrData
+    ggplot2movies, dplyr (>= 0.7.0), readr, readxl, jrData
 Remotes:
-    jr-packages/jrData, jr-packages/jrIntroduction
+    jr-packages/jrData
 Suggests:
     knitr, tufte, rmarkdown, formatR
 VignetteBuilder: knitr

@@ -40,23 +40,23 @@ data("yeast", package = "jrIntroBio")
 ```
 
 
-(1) We want to look at how film budgets have changed over time for both the Comedy and non Comedy films. To start with, since there are missing values `NA` for films where we didn't know the budget, there could be complications for calculating averages and plots. We can use the `is.na()` function to find such values. Use the `filter()` function to remove them, try using the `%>%` operator notation if you like, `movies %>% filter(!is.na(...))`
+<!-- (1) We want to look at how film budgets have changed over time for both the Comedy and non Comedy films. To start with, since there are missing values `NA` for films where we didn't know the budget, there could be complications for calculating averages and plots. We can use the `is.na()` function to find such values. Use the `filter()` function to remove them, try using the `%>%` operator notation if you like, `movies %>% filter(!is.na(...))` -->
 
-    ```{r, eval = FALSE}
-    # movies %>%
-    #   filter(!is.na(budget))
-    ```
+<!--     ```{r, eval = FALSE} -->
+<!--     # movies %>% -->
+<!--     #   filter(!is.na(budget)) -->
+<!--     ``` -->
 
 
-(1) We want to look at comedy and non comedy films in each year, this is some sort of grouping structure which suggests use of the `group_by()` function. Create this grouping structure on the filtered movies data
+<!-- (1) We want to look at comedy and non comedy films in each year, this is some sort of grouping structure which suggests use of the `group_by()` function. Create this grouping structure on the filtered movies data -->
 
-    ```{r, eval = FALSE}
-    # movies %>% 
-    #   filter(!is.na(budget)) %>%
-    #   group_by(year,Comedy)
-    ```
+<!--     ```{r, eval = FALSE} -->
+<!--     # movies %>%  -->
+<!--     #   filter(!is.na(budget)) %>% -->
+<!--     #   group_by(year,Comedy) -->
+<!--     ``` -->
 
-(1) Use `summarise()` to calculate the average budget in each year for both comedy and non comedy films. When you do name the new column of averages `b` and store the final output data as a variable called `plotdat`
+<!-- (1) Use `summarise()` to calculate the average budget in each year for both comedy and non comedy films. When you do name the new column of averages `b` and store the final output data as a variable called `plotdat` -->
 
     ```{r}
     # plotdat = movies %>% 
