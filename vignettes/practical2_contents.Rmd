@@ -60,10 +60,6 @@ head(yeast)
 dim(yeast)
 ```
 
-```{r}
-dim(yeast)
-```
-
 (1) Recall that if I want to pull out a single column, or variable, from a data frame we can use `$`. To extract the protein id's from this data set we write `yeast$seq`.^[If you can't remember what the names of the columns are, you can use `colnames(yeast)` to find out. Since this dataset is part of a package, you could also type `?yeast` to get some documentation on the dataset] 
 
 Using `mean()` and `median()` calculate these summary statistics for the measure on nucleus concensus patterns `nuc`.
