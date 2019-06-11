@@ -1,6 +1,6 @@
 Package: jrIntroBio
 Title: Jumping Rivers: Introduction to R for Biologists
-Version: 0.0.0.9000
+Version: 0.0.0.9100
 Authors@R: c(
   person("Roman", "Popat", email="roman@jumingrivers.com", role = "aut"),
   person("Jamie", "Owen", email="jamie@jumpingrivers.com", role = c("aut", "cre")),
@@ -17,6 +17,6 @@ Imports:
 Remotes:
     jr-packages/jrData
 Suggests:
-    knitr, tufte, rmarkdown, formatR
+    knitr, tufte, rmarkdown, formatR, testthat, lintr
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
