@@ -1,81 +1,76 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
-```{r, include = FALSE, cache = FALSE}
-library(knitr)
-# opts_knit$set(out.format = "latex")
-knit_theme$set(knit_theme$get("greyscale0"))
-
-# options(replace.assign=FALSE,width=50)
-
-# opts_chunk$set(fig.path='figure/graphics-', 
-#                cache.path='cache/graphics-', 
-#                dev='pdf', fig.width=5, fig.height=5, 
-#               cache=FALSE)
-# knit_hooks$set(crop=hook_pdfcrop)
-suppressPackageStartupMessages(library(dplyr))
-
-# figure referencing hack
-fig <- local({
-  i <- 0
-  ref <- list()
-  list(
-    cap=function(refName, text) {
-      i <<- i + 1
-      ref[[refName]] <<- paste0("Figure ",i)
-      paste("Figure ", i, ": ", text, sep="")
-    },
-    ref=function(refName) {
-      ref[[refName]]
-    })
-})
-
-```
-
 # Data manipulation 
 
 This section will hopefully help you get more comfortable with some of the `dplyr` functionality for "wrangling" your data. We will do some data wrangling and the use that to summarise the data. Make sure you load in the `dplyr` package and the `yeast` data set.
 
-```{r, echo = 2:3, eval = 2:3}
-suppressPackageStartupMessages(library(dplyr))
+```{r, warning = FALSE, message = FALSE}
 library(dplyr)
 data("yeast", package = "jrIntroBio")
 ```
 
+## Question 1
+
+(1) Make sure you are comfortable with what the data looks like using `head()` and `colnames()`.
+    ```{r}
+    head(yeast)
+    colnames(yeast)
+    ```
+
+
+(1) Create a subset of extracellular proteins, i.e `class == EXC` called `exc`.
+    ```{r}
+    exc = filter(yeast, class == "EXC")
+    ```
+
+(1) What is the mean value for McGeoch's signal sequence method for extracellular proteins?
+    ```{r}
+    summarise(exc, mean(mcg))
+    # or 
+    # mean(exc$mcg)
+    ```
+
+(1) Are there more nuclear or mitochondrial proteins in the dataset? Hint: you can use the function `count()` to count tally up the categories within a column of a tibble.
+    ```{r}
+    count(yeast, class)
+    ## more nuclear
+    ```
+
+(1) How many proteins had a von Heijne's score of less than 0.2?
+    ```{r}
+    yeast %>% 
+      filter(gvh < 0.2) %>% 
+      nrow()
+    ```
+
+## Question 2
+
 (1) We want to look at the average value across of all scores aggregated for each localisation class. We can start with the following code that will calculate the average value for the mitochondrial measure. Lets use the `%>%` pipe operator to do this.
+    ```{r echo=TRUE, eval=FALSE}
+    yeast %>%
+      summarise(mean = mean(mit))
+    ```
 
-```{r echo=TRUE, eval=FALSE}
-yeast %>%
-  summarise(mean = mean(mit))
-```
-
-(2) Now adapt this code to use the `group_by` function to produce a mean for each localisation class. Remember you can simply add another line into the pipeline.
- 
-```{r, eval=FALSE}
-yeast %>%
-  group_by(class) %>%
-  summarise(mean = mean(mit))
-```
+(2) Now adapt this code to use the `group_by()` function to produce a mean for each localisation class. Remember you can simply add another line into the pipeline.
+    ```{r, eval=FALSE}
+    yeast %>%
+      group_by(class) %>%
+      summarise(mean = mean(mit))
+    ```
 
 (3) Now create a another additional summaries by adding to your summarise function. Calculate the sample size and standard deviation of the `mit` measure as well as its mean. See the
 examples in `?summarise` if you get stuck.
-
-```{r, eval=FALSE}
-yeast %>%
-  group_by(class) %>%
-  summarise(n = n(),
-            mean = mean(mit),
-            sd = sd(mit))
-```
+    ```{r, eval=FALSE}
+    yeast %>%
+      group_by(class) %>%
+      summarise(n = n(),
+                mean = mean(mit),
+                sd = sd(mit))
+    ```
 
 (4) Bonus Question: We want to calculate the mean for all of the amino acid measures across all of the localisations. You can use the `summarise_all()` function for this but you will need to remove a collumn first...
-
-```{r, eval=FALSE}
-yeast %>%
-  select(-seq) %>%
-  group_by(class) %>%
-  summarise_all(mean)
-```
+    ```{r, eval=FALSE}
+    yeast %>%
+      select(-seq) %>%
+      group_by(class) %>%
+      summarise_all(mean)
+    ```
 

@@ -13,7 +13,8 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports:
-    ggplot2movies, dplyr (>= 0.7.0), readr, readxl, jrData
+    ggplot2movies, dplyr (>= 0.7.0), readr, readxl, jrData, 
+    ggplot2, tibble
 Remotes:
     jr-packages/jrData
 Suggests:
