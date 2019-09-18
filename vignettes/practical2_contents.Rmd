@@ -15,7 +15,7 @@ To load the data into your current session you can use.
 data(yeast, package = "jrIntroBio")
 ```
 
-(1)  Use the `head()` function to inspect the top of the data, this can help give you a feel for what the data looks like and what variables are contained within the data?
+(1) Use the `head()` function to inspect the top of the data, this can help give you a feel for what the data looks like and what variables are contained within the data?
     ```{r}
     head(yeast)
     ```
@@ -27,7 +27,7 @@ data(yeast, package = "jrIntroBio")
 
 (1) Recall that if I want to pull out a single column, or variable, from a data frame we can use `$`. To extract the protein id's from this data set we write `yeast$seq`.^[If you can't remember what the names of the columns are, you can use `colnames(yeast)` to find out. Since this dataset is part of a package, you could also type `?yeast` to get some documentation on the dataset] 
 
-Using `mean()` and `median()` calculate these summary statistics for the measure on nucleus concensus patterns `nuc`.
+(1) Using `mean()` and `median()` calculate these summary statistics for the measure on nucleus concensus patterns `nuc`.
     ```{r}
     mean(yeast$nuc)
     median(yeast$nuc)

@@ -3,7 +3,6 @@
 \docType{data}
 \name{yeast}
 \alias{yeast}
-\alias{yeast_classes}
 \title{Yeast protein localisations.}
 \format{A data frame with 1484 rows and 10 variables:
 \describe{
@@ -51,8 +50,6 @@ Paul Horton & Kenta Nakai, ["A Probablistic Classification System for Predicting
 }
 \usage{
 yeast
-
-yeast_classes
 }
 \description{
 A dataset containing the subcellular protein localisations along with

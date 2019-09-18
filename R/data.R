@@ -50,5 +50,7 @@
 #' @source Paul Horton & Kenta Nakai, ["A Probablistic Classification System for Predicting the Cellular Localization Sites of Proteins"](https://www.aaai.org/Papers/ISMB/1996/ISMB96-012.pdf), Intelligent Systems in Molecular Biology, 109-115. St. Louis, USA 1996.
 "yeast"
 
-#' @rdname yeast
+#' Classes for the yeast data
+#'
+#' See the \link{yeast} help page for further info
 "yeast_classes"
