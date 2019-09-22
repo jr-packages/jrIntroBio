@@ -1,23 +1,38 @@
 Package: jrIntroBio
 Title: Jumping Rivers: Introduction to R for Biologists
 Version: 0.2.0
-Authors@R: c(
-  person("Roman", "Popat", email="roman@jumingrivers.com", role = "aut"),
-  person("Jamie", "Owen", email="jamie@jumpingrivers.com", role = c("aut", "cre")),
-  person("Colin", "Gillespie", email="colin@jumpingrivers.com", role = "aut")
-  )
-Description: Practicals and data sets for the Introduction to R course run by Jumping
-  Rivers, this package is an import for jrIntroduction.
-Depends: R (>= 3.2.0)
+Authors@R: 
+    person(given = "Jumping",
+           family = "Rivers",
+           role = c("aut", "cre"),
+           email = "info@jumingrivers.com")
+Description: Practicals and data sets for the Introduction to R
+    course run by Jumping Rivers, this package is an import for
+    jrIntroduction.
 License: GPL-3
+Depends: 
+    R (>= 3.2.0)
+Imports:
+    dplyr (>= 0.7.0),
+    ggplot2,
+    ggplot2movies,
+    jrData,
+    jrIntroduction,
+    readr,
+    readxl,
+    tibble
+Suggests:
+    formatR,
+    knitr,
+    lintr,
+    rmarkdown,
+    testthat,
+    tufte
+VignetteBuilder: 
+    knitr
+Remotes:
+    jr-packages/jrData,
+    jr-packages/jrIntroduction
 Encoding: UTF-8
 LazyData: true
-Imports:
-    ggplot2movies, dplyr (>= 0.7.0), readr, readxl, jrData, 
-    ggplot2, tibble
-Remotes:
-    jr-packages/jrData
-Suggests:
-    knitr, tufte, rmarkdown, formatR, testthat, lintr
-VignetteBuilder: knitr
 RoxygenNote: 6.1.1
