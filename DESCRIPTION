@@ -1,6 +1,6 @@
 Package: jrIntroBio
 Title: Jumping Rivers: Introduction to R for Biologists
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: 
     person(given = "Jumping",
            family = "Rivers",
@@ -35,4 +35,4 @@ Remotes:
     jr-packages/jrIntroduction
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2

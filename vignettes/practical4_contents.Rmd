@@ -24,7 +24,7 @@ data("yeast", package = "jrIntroBio")
 (1) What is the mean value for McGeoch's signal sequence method for extracellular proteins?
     ```{r}
     summarise(exc, mean(mcg))
-    # or 
+    # or
     # mean(exc$mcg)
     ```
 
@@ -36,8 +36,8 @@ data("yeast", package = "jrIntroBio")
 
 (1) How many proteins had a von Heijne's score of less than 0.2?
     ```{r}
-    yeast %>% 
-      filter(gvh < 0.2) %>% 
+    yeast %>%
+      filter(gvh < 0.2) %>%
       nrow()
     ```
 

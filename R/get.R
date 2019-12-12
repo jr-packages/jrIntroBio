@@ -6,9 +6,10 @@
 #' @inheritParams GetDataFrame
 #' @importFrom stats runif
 #' @importFrom stats rnorm
-#' @param seed The random seed to start with, passed to `set.seed()`, defaults to 1
+#' @param seed The random seed to start with, passed to `set.seed()`,
+#' defaults to 1
 #' @export
-GetNumericVector = function(seed=1){
+GetNumericVector = function(seed = 1) {
   set.seed(seed)
   l = sample(50000:60000, 1)
   m = runif(1, -5, 5)
@@ -18,7 +19,7 @@ GetNumericVector = function(seed=1){
 
 #' @export
 #' @rdname GetNumericVector
-GetLogicalVector = function(seed=1){
+GetLogicalVector = function(seed = 1) {
   set.seed(seed)
   l = sample(52000:60000, 1)
   v = sample(c(TRUE, FALSE), l, replace = TRUE)
@@ -27,7 +28,7 @@ GetLogicalVector = function(seed=1){
 
 #' @export
 #' @rdname GetNumericVector
-GetCharacterVector = function(seed = 1){
+GetCharacterVector = function(seed = 1) {
   set.seed(seed)
   l = sample(51000:60000, 1)
   v = sample(LETTERS, l, replace = TRUE)

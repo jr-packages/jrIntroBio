@@ -1,10 +1,10 @@
 #' @title Yeast protein localisations.
 #'
-#' @description A dataset containing the subcellular protein localisations along with
-#' several amino acid sequence based metrics used to make a classification
-#' of the localisation. `yeast` contains the full dataset while `yeast_classes` is
-#' simply `class` collumn from the `yeast` dataset as a vector, for convenience
-#' in the practical excercise.
+#' @description A dataset containing the subcellular protein
+#' localisations along with several amino acid sequence based metrics
+#' used to make a classification of the localisation. `yeast` contains
+#' the full dataset while `yeast_classes` is simply `class` collumn from
+#' the `yeast` dataset as a vector, for convenience in the practical excercise.
 #'
 #' @format A data frame with 1484 rows and 10 variables:
 #' \describe{
@@ -47,7 +47,10 @@
 #'                ERL (endoplasmic reticulum lumen)                    5}
 #'   ...
 #' }
-#' @source Paul Horton & Kenta Nakai, ["A Probablistic Classification System for Predicting the Cellular Localization Sites of Proteins"](https://www.aaai.org/Papers/ISMB/1996/ISMB96-012.pdf), Intelligent Systems in Molecular Biology, 109-115. St. Louis, USA 1996.
+#' @source Paul Horton & Kenta Nakai, ["A Probablistic Classification
+#' System for Predicting the Cellular Localization Sites of Proteins"]
+#' (https://www.aaai.org/Papers/ISMB/1996/ISMB96-012.pdf), Intelligent
+#' Systems in Molecular Biology, 109-115. St. Louis, USA 1996.
 "yeast"
 
 #' Classes for the yeast data
