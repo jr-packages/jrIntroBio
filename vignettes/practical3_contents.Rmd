@@ -12,7 +12,7 @@ data(yeast, package = "jrIntroBio")
 Let's start with a basic scatter plot of McGeoch's method `mcg` and von Heijne's method `gvh` for signal sequence recognition.
 
 ```{r label = "scatter_simple", fig.margin = TRUE, fig.cap="A basic scatter plot.", echo = TRUE}
-ggplot(yeast, aes(x = mcg, y = gvh)) + 
+ggplot(yeast, aes(x = mcg, y = gvh)) +
   geom_point()
 ```
 
@@ -20,41 +20,41 @@ Whilst this can be informative at the data exploration stage, it isn't very aest
 
 (1) Use the `x`, `y` and `title` arguments^[Arguments are the things we pass to our function inside the `()` to control the behavior of that function.] of the `labs()` function to change the axis labels to something more sensible
     ```{r, eval = FALSE}
-    ggplot(yeast, aes(x = mcg, y = gvh)) + 
-      geom_point() + 
-      labs(x = "McGeoch's method", 
-           y = "von Heijne's method", 
+    ggplot(yeast, aes(x = mcg, y = gvh)) +
+      geom_point() +
+      labs(x = "McGeoch's method",
+           y = "von Heijne's method",
            title = "Correlation of signal sequence detection measures")
     ```
 
 (1) The range of possible values for each measure is between 0 and 1. Use the `ylim()` and `xlim()` functions to specify a new axis range. For example, for the x-axis it would be `+ xlim(0, 1)`
     ```{r, eval = FALSE}
-    ggplot(yeast, aes(x = mcg, y = gvh)) + 
-      geom_point() + 
-      labs(x = "McGeoch's method", 
-           y = "von Heijne's method") + 
-      xlim(0,1) + 
-      ylim(0,1)
+    ggplot(yeast, aes(x = mcg, y = gvh)) +
+      geom_point() +
+      labs(x = "McGeoch's method",
+           y = "von Heijne's method") +
+      xlim(0, 1) +
+      ylim(0, 1)
     ```
 
 (1) Try changing the colours of your points using the `colour` argument. You can find out what colours are allowed by name by using the `colors()` function. For instance, `colour = "red"` would change the points to red.
     ```{r, eval = FALSE}
-    ggplot(yeast, aes(x = mcg, y = gvh)) + 
-      geom_point(colour = "red") + 
-      labs(x = "McGeoch's method", 
-           y = "von Heijne's method") + 
-      xlim(0,1) + 
-      ylim(0,1)
+    ggplot(yeast, aes(x = mcg, y = gvh)) +
+      geom_point(colour = "red") +
+      labs(x = "McGeoch's method",
+           y = "von Heijne's method") +
+      xlim(0, 1) +
+      ylim(0, 1)
     ```
 
 (1) We could make this even neater by colouring points by a column in our data. Try replacing `colour = "red"` with `aes(colour = class)`. Why do you think we need the `aes()` function?
     ```{r, eval = FALSE}
-    ggplot(yeast, aes(x = mcg, y = gvh)) + 
-      geom_point(aes(colour = class)) + 
-      labs(x = "McGeoch's method", 
-           y = "von Heijne's method") + 
-      xlim(0,1) + 
-      ylim(0,1)
+    ggplot(yeast, aes(x = mcg, y = gvh)) +
+      geom_point(aes(colour = class)) +
+      labs(x = "McGeoch's method",
+           y = "von Heijne's method") +
+      xlim(0, 1) +
+      ylim(0, 1)
     
     # need the aes() function because we are mapping
     # a variable in the data set to an aesthetic
@@ -63,12 +63,12 @@ Whilst this can be informative at the data exploration stage, it isn't very aest
 We should now have a plot that look like Figure 2. 
 
 ```{r, label = "double", fig.cap = "A scatter plot and bar chart as a target for these exercises.", echo = FALSE, fig.margin = TRUE}
-ggplot(yeast, aes(x = mcg, y = gvh)) + 
-  geom_point(aes(colour = class)) + 
-  labs(x = "McGeoch's method", 
-       y = "von Heijne's method") + 
-  xlim(0,1) + 
-  ylim(0,1)
+ggplot(yeast, aes(x = mcg, y = gvh)) +
+  geom_point(aes(colour = class)) +
+  labs(x = "McGeoch's method",
+       y = "von Heijne's method") +
+  xlim(0, 1) +
+  ylim(0, 1)
 ```
 
 
@@ -76,33 +76,33 @@ ggplot(yeast, aes(x = mcg, y = gvh)) +
 
 Here is the code for a histogram of McGeoch's method `mcg` for signal sequence recognition. 
 ```{r, echo = TRUE, eval = FALSE}
-ggplot(yeast, aes(x = mcg)) + 
+ggplot(yeast, aes(x = mcg)) +
   geom_histogram()
 ```
 
 (1) Try changing the binwidth using the argument `binwidth` within `geom_histogram()`. For instance, `binwidth = 0.02`
     ```{r, eval = FALSE}
-    ggplot(yeast, aes(x = mcg)) + 
+    ggplot(yeast, aes(x = mcg)) +
       geom_histogram(binwidth = 0.02)
     ```
 
 (1) Try adding `fill = class` to the aesthetic mapping function, `aes()`. What happens?
     ```{r, eval = FALSE}
-    ggplot(yeast, aes(x = mcg, fill = class)) + 
+    ggplot(yeast, aes(x = mcg, fill = class)) +
       geom_histogram(binwidth = 0.02)
     # different colour for each fill
     ```
     
 (1) Try adding the argument `alpha = 0.2` to the `geom_histogram()` function. What happens?
     ```{r, eval = FALSE}
-    ggplot(yeast, aes(x = mcg)) + 
+    ggplot(yeast, aes(x = mcg)) +
       geom_histogram(binwidth = 0.02, alpha = 0.02)
     # alpha controls the transparency
     ```
     
 (1) Try changing `geom_histogram()` to `geom_density()`
     ```{r, warning = FALSE, fig.width=6, fig.height=3, fig.cap = "Density plots of McGeoch's method coloured by class"}
-    ggplot(yeast, aes(x = mcg, fill = class)) + 
+    ggplot(yeast, aes(x = mcg, fill = class)) +
       geom_density(binwidth = 0.02, alpha = 0.2)
     ```
 
