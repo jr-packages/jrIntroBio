@@ -9,5 +9,5 @@ yeast = as_tibble(yeast)
 
 yeast_classes = yeast %>%
   count(class)
-saveRDS(yeast, file = "data/yeast.rds", version = 2)
-saveRDS(yeast_classes, file = "data/yeast_classes.rds", version = 2)
+saveRDS(yeast, file = "data/yeast.rds", version = 2, compress = "xz")
+saveRDS(yeast_classes, file = "data/yeast_classes.rds", version = 2, compress = "xz")

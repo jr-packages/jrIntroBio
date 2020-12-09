@@ -4,7 +4,8 @@
 \name{yeast}
 \alias{yeast}
 \title{Yeast protein localisations.}
-\format{A data frame with 1484 rows and 10 variables:
+\format{
+A data frame with 1484 rows and 10 variables:
 \describe{
   \item{seq}{Accession number for the SWISS-PROT database}
   \item{mcg}{McGeoch's method for signal sequence recognition}
@@ -44,7 +45,8 @@
 
                ERL (endoplasmic reticulum lumen)                    5}
   ...
-}}
+}
+}
 \source{
 Paul Horton & Kenta Nakai, ["A Probablistic Classification
 System for Predicting the Cellular Localization Sites of Proteins"]

@@ -4,7 +4,9 @@
 \name{yeast_classes}
 \alias{yeast_classes}
 \title{Classes for the yeast data}
-\format{An object of class \code{integer} of length 10.}
+\format{
+An object of class \code{integer} of length 10.
+}
 \usage{
 yeast_classes
 }
